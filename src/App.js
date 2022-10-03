@@ -41,7 +41,7 @@ const App = () => {
       password: Yup.string()
         .required("Password est requis")
         .min(8, "Password est trop court")
-        .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/, "Password doit avoir au moins un charactère spécial"),
+        .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-])/, "Password doit avoir au moins un charactère spécial"),
       passwordConfirmation: Yup.string()
         .required("Password Confirmation est requis")
         .oneOf([Yup.ref('password')], 'Password confirmation est différent de password'),
